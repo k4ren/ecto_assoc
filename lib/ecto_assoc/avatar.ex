@@ -4,5 +4,6 @@ defmodule EctoAssoc.Avatar do
   schema "avatars" do
     field :nick_name, :string
     field :pic_url, :string
+    belongs_to :user, EctoAssoc.User  # added
   end
 end
