@@ -7,7 +7,9 @@ defmodule EctoAssoc.Application do
 
   def start(_type, _args) do
     # List all child processes to be supervised
+    import Supervisor.Spec
     children = [
+      supervisor(EctoAssoc.Repo, [])
       # Starts a worker by calling: EctoAssoc.Worker.start_link(arg)
       # {EctoAssoc.Worker, arg},
     ]
